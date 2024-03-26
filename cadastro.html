@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Usuário</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="home.html">Europartner</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdownUsers" aria-controls="navbarNavDropdownUsers" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdownUsers">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="usuarios.html">Usuários</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="empresas.html">Empresas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="emails.html">E-mails</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="doc.html">Doc</a>
+          </li>
+          <li class="nav-item">
+            <span class="nav-link">Sair</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container py-5 flex-grow-1">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <h2 class="mb-4 text-center">Cadastro de Usuário</h2>
+        <div class="card">
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label for="nomeCompleto" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="nomeCompleto">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email">
+              </div>
+              <div class="mb-3">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="senha">
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="receberNotificacoes">
+                <label class="form-check-label" for="receberNotificacoes">Receber Notificações</label>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="reset" class="btn btn-secondary">Limpar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3 bg-dark">
+    <div class="container text-center">
+      <span class="text-white">Todos os direitos reservados - 2024</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
