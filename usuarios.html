@@ -47,92 +47,198 @@
         <h5 class="mb-4">Usuários</h5>
         <!-- Botão alinhado à esquerda -->
         <div class="col-12 mb-4 text-start">
-          <a href="cadastro.html" class="btn btn-primary">
+          <!-- Botão para abrir o modal -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastroUsuarioModal">
             <i class="bi bi-plus-lg"></i> Adicionar Novo Usuário
-          </a>
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="cadastroUsuarioModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalLabel">Cadastro de Usuário</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Formulário de Cadastro -->
+                  <form>
+                    <div class="mb-3">
+                      <label for="nomeCompleto" class="form-label">Nome Completo</label>
+                      <input type="text" class="form-control" id="nomeCompleto">
+                    </div>
+                    <div class="mb-3">
+                      <label for="emailCadastro" class="form-label">E-mail</label>
+                      <input type="email" class="form-control" id="emailCadastro">
+                    </div>
+                    <div class="mb-3">
+                      <label for="senhaCadastro" class="form-label">Senha</label>
+                      <input type="password" class="form-control" id="senhaCadastro">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="receberNotificacoes">
+                      <label class="form-check-label" for="receberNotificacoes">Receber Notificações</label>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-start">
+                  <button type="submit" class="btn btn-primary">Salvar</button>
+                  <button type="reset" class="btn btn-secondary">Limpar</button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-12">
           <!-- Tabela -->
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Nome</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Ativo</th>
-                <th scope="col">Recebe Notificação</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Excluir</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>João Silva</td>
-                <td>joao.silva@example.com</td>
-                <td><input type="checkbox" checked></td>
-                <td><input type="checkbox"></td>
-                <td><i class="bi bi-pencil-fill"></i></td>
-                <td><i class="bi bi-trash-fill"></i></td>
-              </tr>
-              <tr>
-                <td>Maria Oliveira</td>
-                <td>maria.oliveira@example.com</td>
-                <td><input type="checkbox" checked></td>
-                <td><input type="checkbox" checked></td>
-                <td><i class="bi bi-pencil-fill"></i></td>
-                <td><i class="bi bi-trash-fill"></i></td>
-              </tr>
-              <tr>
-                <td>Roberto Carlos</td>
-                <td>roberto.carlos@example.com</td>
-                <td><input type="checkbox"></td>
-                <td><input type="checkbox" checked></td>
-                <td><i class="bi bi-pencil-fill"></i></td>
-                <td><i class="bi bi-trash-fill"></i></td>
-              </tr>
-              <tr>
-                <td>Glória Maria</td>
-                <td>gloria.maria@example.com</td>
-                <td><input type="checkbox" checked></td>
-                <td><input type="checkbox"></td>
-                <td><i class="bi bi-pencil-fill"></i></td>
-                <td><i class="bi bi-trash-fill"></i></td>
-              </tr>
-              <tr>
-                <td>Erasmo Carlos</td>
-                <td>erasmo.carlos@example.com</td>
-                <td><input type="checkbox" checked></td>
-                <td><input type="checkbox"></td>
-                <td><i class="bi bi-pencil-fill"></i></td>
-                <td><i class="bi bi-trash-fill"></i></td>
-              </tr>
-              <tr>
-                <td>Maria Vanusa</td>
-                <td>maria.vanusa@example.com</td>
-                <td><input type="checkbox" checked></td>
-                <td><input type="checkbox"></td>
-                <td><i class="bi bi-pencil-fill"></i></td>
-                <td><i class="bi bi-trash-fill"></i></td>
-              </tr>
-              <tr>
-                <td>Tim Maia</td>
-                <td>tim.maia@example.com</td>
-                <td><input type="checkbox" checked></td>
-                <td><input type="checkbox"></td>
-                <td><i class="bi bi-pencil-fill"></i></td>
-                <td><i class="bi bi-trash-fill"></i></td>
-              </tr>
-              <tr>
-                <td>Elis Regina</td>
-                <td>elis.regina@example.com</td>
-                <td><input type="checkbox" checked></td>
-                <td><input type="checkbox"></td>
-                <td><i class="bi bi-pencil-fill"></i></td>
-                <td><i class="bi bi-trash-fill"></i></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="container py-5">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Ativo</th>
+                    <th scope="col">Recebe Notificação</th>
+                    <th scope="col">Notificar Falha</th>
+                    <th scope="col">Excluir</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>João Silva</td>
+                    <td>joao.silva@example.com</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="switch1">
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash-fill"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Maria Oliveira</td>
+                    <td>maria.oliveira@example.com</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked></td>
+                    <td>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="switch1">
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash-fill"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Roberto Carlos</td>
+                    <td>roberto.carlos@example.com</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="switch1">
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash-fill"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Glória Maria</td>
+                    <td>gloria.maria@example.com</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="switch1">
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash-fill"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Erasmo Carlos</td>
+                    <td>erasmo.carlos@example.com</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="switch1">
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash-fill"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Maria Vanusa</td>
+                    <td>maria.vanusa@example.com</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="switch1">
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash-fill"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Tim Maia</td>
+                    <td>tim.maia@example.com</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="switch1">
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash-fill"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Elis Regina</td>
+                    <td>elis.regina@example.com</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox"></td>
+                    <td>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="switch1">
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash-fill"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
